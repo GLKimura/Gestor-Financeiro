@@ -19,83 +19,7 @@ Sistema completo de gerenciamento financeiro pessoal, desenvolvido como **site w
 - **Recharts** - Gráficos interativos
 - **localStorage** - Armazenamento de dados no navegador
 
-## 📤 Como Colocar no GitHub
 
-Veja o guia completo em: **`COMO_COLOCAR_NO_GITHUB.md`**
-
-**Resumo rápido:**
-1. Instale Git: https://git-scm.com/download/win
-2. Crie repositório no GitHub
-3. Execute: `git init`, `git add .`, `git commit -m "Initial commit"`
-4. Conecte: `git remote add origin https://github.com/SEU_USUARIO/nome-repo.git`
-5. Envie: `git push -u origin main`
-
-## 🚀 Como Executar
-
-### Instalação
-
-```bash
-npm install
-```
-
-### Desenvolvimento
-
-```bash
-npm run dev
-```
-
-Acesse: **http://localhost:3000**
-
-### Build para Produção
-
-```bash
-npm run build
-npm start
-```
-
-## 🌐 Deploy como Site Web
-
-### Netlify (Recomendado - Grátis)
-
-1. **Preparar código:**
-   ```bash
-   git add .
-   git commit -m "Preparar deploy"
-   git push origin main
-   ```
-
-2. **Conectar ao Netlify:**
-   - Acesse: **https://app.netlify.com**
-   - Clique em **"Add new site"** → **"Import an existing project"**
-   - Escolha **GitHub** e autorize
-   - Selecione seu repositório
-
-3. **Deploy automático:**
-   - Netlify detecta Next.js automaticamente ✅
-   - Clique em **"Deploy site"**
-   - Aguarde 2-5 minutos
-   - **Pronto!** 🎉
-
-📖 **Guia completo:** Veja `DEPLOY_NETLIFY.md` para instruções detalhadas
-
-### Vercel (Alternativa)
-
-1. Acesse: **https://vercel.com**
-2. Conecte seu repositório GitHub
-3. Configure:
-   - Framework Preset: **Next.js**
-   - Root Directory: **./** (raiz do projeto)
-4. Clique em **Deploy**
-5. **Pronto!** Seu site está no ar 🎉
-
-### Outros
-
-O projeto pode ser deployado em qualquer plataforma que suporte Next.js:
-- Railway
-- Render
-- AWS Amplify
-- Google Cloud Run
-- Azure Static Web Apps
 
 ## 📁 Estrutura do Projeto
 
@@ -150,6 +74,7 @@ npm run build
 ## 📄 Licença
 
 Este projeto é open source e está disponível sob a licença MIT.
+Desenvolved by Gabriel Kimura
 
 ---
 
