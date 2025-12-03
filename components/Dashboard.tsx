@@ -27,7 +27,7 @@ export default function Dashboard() {
   if (!balanco) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-10 w-10 border-2 border-emerald-400 border-t-transparent" />
+        <div className="animate-spin rounded-full h-10 w-10 border-2 border-primary-500 border-t-transparent" />
       </div>
     )
   }
@@ -50,71 +50,71 @@ export default function Dashboard() {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
-        <div className="rounded-2xl border border-emerald-500/20 bg-slate-900 p-5 shadow-lg shadow-emerald-500/10">
+        <div className="rounded-2xl border-2 border-primary-500 bg-primary-50 dark:bg-slate-900 p-5 shadow-lg shadow-primary-500/20">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-emerald-300/70">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300">
                 Entradas
               </p>
-              <p className="mt-2 text-2xl font-semibold text-emerald-300">{entradasFormatadas}</p>
-              <p className="mt-1 text-[11px] text-slate-400">Recebimentos no período</p>
+              <p className="mt-2 text-2xl font-semibold text-primary-600 dark:text-primary-400">{entradasFormatadas}</p>
+              <p className="mt-1 text-[11px] text-gray-600 dark:text-slate-400">Recebimentos no período</p>
             </div>
-            <div className="h-11 w-11 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-400/40">
-              <ArrowUpCircle className="w-6 h-6 text-emerald-300" />
+            <div className="h-11 w-11 rounded-full bg-primary-500 flex items-center justify-center border-2 border-primary-600">
+              <ArrowUpCircle className="w-6 h-6 text-white" />
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-rose-500/15 bg-slate-900 p-5 shadow-lg shadow-rose-500/10">
+        <div className="rounded-2xl border-2 border-red-500 bg-red-50 dark:bg-slate-900 p-5 shadow-lg shadow-red-500/20">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-rose-300/70">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-red-700 dark:text-red-300">
                 Saídas
               </p>
-              <p className="mt-2 text-2xl font-semibold text-rose-300">{saidasFormatadas}</p>
-              <p className="mt-1 text-[11px] text-slate-400">Despesas totais</p>
+              <p className="mt-2 text-2xl font-semibold text-red-600 dark:text-red-400">{saidasFormatadas}</p>
+              <p className="mt-1 text-[11px] text-gray-600 dark:text-slate-400">Despesas totais</p>
             </div>
-            <div className="h-11 w-11 rounded-full bg-rose-500/10 flex items-center justify-center border border-rose-400/40">
-              <ArrowDownCircle className="w-6 h-6 text-rose-300" />
+            <div className="h-11 w-11 rounded-full bg-red-500 flex items-center justify-center border-2 border-red-600">
+              <ArrowDownCircle className="w-6 h-6 text-white" />
             </div>
           </div>
         </div>
 
         <div
-          className={`rounded-2xl p-5 border bg-slate-900 shadow-xl ${
+          className={`rounded-2xl p-5 border-2 bg-white dark:bg-slate-900 shadow-xl ${
             balanco.saldo >= 0
-              ? 'border-emerald-500/40 shadow-emerald-500/15'
-              : 'border-rose-500/40 shadow-rose-500/15'
+              ? 'border-primary-500 shadow-primary-500/20'
+              : 'border-red-500 shadow-red-500/20'
           }`}
         >
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-300/80">
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-gray-700 dark:text-slate-300">
                 Saldo consolidado
               </p>
               <p
                 className={`mt-2 text-3xl font-semibold ${
-                  balanco.saldo >= 0 ? 'text-emerald-300' : 'text-rose-300'
+                  balanco.saldo >= 0 ? 'text-primary-600 dark:text-primary-400' : 'text-red-600 dark:text-red-400'
                 }`}
               >
                 {saldoFormatado}
               </p>
-              <p className="mt-1 text-[11px] text-slate-400">
+              <p className="mt-1 text-[11px] text-gray-600 dark:text-slate-400">
                 Entradas - saídas, calculado em tempo real no seu dispositivo
               </p>
             </div>
             <div className="flex flex-col items-end gap-2">
               <div
-                className={`h-11 w-11 rounded-full flex items-center justify-center border bg-slate-900/60 ${
+                className={`h-11 w-11 rounded-full flex items-center justify-center border-2 bg-white dark:bg-slate-800 ${
                   balanco.saldo >= 0
-                    ? 'border-emerald-400/50 text-emerald-300'
-                    : 'border-rose-400/50 text-rose-300'
+                    ? 'border-primary-500 text-primary-600 dark:text-primary-400'
+                    : 'border-red-500 text-red-600 dark:text-red-400'
                 }`}
               >
                 <DollarSign className="w-6 h-6" />
               </div>
-              <span className="inline-flex items-center gap-1 rounded-full bg-slate-900/80 px-2 py-1 text-[11px] text-slate-300 border border-slate-700/80">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="inline-flex items-center gap-1 rounded-full bg-gray-100 dark:bg-slate-800 px-2 py-1 text-[11px] text-gray-700 dark:text-slate-300 border border-gray-300 dark:border-slate-700">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary-500 animate-pulse" />
                 Protegido no seu navegador
               </span>
             </div>
@@ -123,20 +123,20 @@ export default function Dashboard() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-5 shadow-lg shadow-slate-900/40">
-          <h3 className="text-sm font-semibold text-slate-100 mb-4 flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-400/40">
-              <TrendingUp className="w-4 h-4 text-emerald-300" />
+        <div className="rounded-2xl border-2 border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-lg">
+          <h3 className="text-sm font-semibold text-gray-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+            <div className="h-8 w-8 rounded-full bg-primary-500 flex items-center justify-center border-2 border-primary-600">
+              <TrendingUp className="w-4 h-4 text-white" />
             </div>
             Gastos por categoria
           </h3>
           <GraficoGastos dados={balanco.gastosPorCategoria} />
         </div>
 
-        <div className="rounded-2xl border border-slate-800 bg-slate-900 p-5 shadow-lg shadow-slate-900/40">
-          <h3 className="text-sm font-semibold text-slate-100 mb-4 flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-400/40">
-              <TrendingUp className="w-4 h-4 text-cyan-300" />
+        <div className="rounded-2xl border-2 border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-lg">
+          <h3 className="text-sm font-semibold text-gray-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+            <div className="h-8 w-8 rounded-full bg-secondary-500 flex items-center justify-center border-2 border-secondary-600">
+              <TrendingUp className="w-4 h-4 text-white" />
             </div>
             Balanço geral
           </h3>
@@ -144,20 +144,20 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-slate-800 bg-slate-900 p-5 shadow-lg shadow-slate-900/40">
-        <h3 className="text-sm font-semibold text-slate-100 mb-4">Insights rápidos</h3>
+      <div className="rounded-2xl border-2 border-gray-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-lg">
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-slate-100 mb-4">Insights rápidos</h3>
         <div className="space-y-2">
           {balanco.saldo < 0 && (
-            <div className="bg-gradient-to-r from-rose-500/10 to-amber-500/10 border border-rose-500/40 p-4 rounded-xl">
-              <p className="text-sm text-rose-100">
+            <div className="bg-red-50 dark:bg-red-500/10 border-2 border-red-500 p-4 rounded-xl">
+              <p className="text-sm text-red-800 dark:text-red-200">
                 Seu saldo está negativo. Considere revisar seus gastos, priorizar dívidas com juros altos
                 e congelar despesas não essenciais nas próximas semanas.
               </p>
             </div>
           )}
           {Object.keys(balanco.gastosPorCategoria).length > 0 && (
-            <div className="bg-gradient-to-r from-sky-500/10 to-emerald-500/10 border border-sky-500/40 p-4 rounded-xl">
-              <p className="text-sm text-sky-100">
+            <div className="bg-secondary-50 dark:bg-secondary-500/10 border-2 border-secondary-500 p-4 rounded-xl">
+              <p className="text-sm text-secondary-800 dark:text-secondary-200">
                 Sua maior categoria de gastos é:{' '}
                 <strong className="font-semibold">
                   {Object.entries(balanco.gastosPorCategoria)
@@ -168,8 +168,8 @@ export default function Dashboard() {
             </div>
           )}
           {balanco.saldo > 0 && (
-            <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border border-emerald-500/40 p-4 rounded-xl">
-              <p className="text-sm text-emerald-100">
+            <div className="bg-primary-50 dark:bg-primary-500/10 border-2 border-primary-500 p-4 rounded-xl">
+              <p className="text-sm text-primary-800 dark:text-primary-200">
                 Você está com saldo positivo. Defina uma porcentagem fixa para investimento todo mês e
                 construa sua reserva de segurança com disciplina.
               </p>
